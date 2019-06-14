@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- This page appeears for broken or nonexisting links -->
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Program Showcase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="/css/animate.css" media="screen">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" type="text/css" href="/css/icomoon.css" media="screen">
+    <!-- Simple Line Icons -->
+    <link rel="stylesheet" type="text/css" href="/css/simple-line-icons.css"media="screen" >
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css" media="screen"/>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/css/style2.css" media="screen"/>
+
+</head>
+<body>
+<header id="fh5co-header">
+    <!-- <div class="row"> -->
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <!-- Mobile Toggle Menu Button -->
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/"><span>Home</span></a></li>
+                <li><a href="/about" ><span>About Us</span></a></li>
+                <li><a href="/help"><span>Help</span></a></li>
+                <!-- This will only display if user is logged in -->
+                <%if(locals.session.userName){%>
+                <li ><a  id="returnToAccountButton" style="color: #fff ; font-weight: bold; font-size: 18px" href="/account/<%= locals.session.userName%>">Return to account</a></li>
+                <li><a href="/account/<%= locals.session.userName %>/logout"><button class="btn btn-primary2" type="button">LOGOUT</button></a></li>
+                <%}%>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <section id="fh5co-work" data-section="User's Projects">
+    <div class="gradient" style="z-index: -100"></div>
+    <div class="container">
+        <div class="text-wrap">
+            <div class="text-inner">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <i class="fh5co-intro-icon icon-exclamation-triangle" id="notFoundIcon"></i>
+                        <h1 class="notFound">The link is broken or the page was not found.</h1>
+                        <p id="notFound">Please return to previous page or try the menu links.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>

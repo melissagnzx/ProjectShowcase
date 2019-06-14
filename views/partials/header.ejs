@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Program Showcase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <!-- Simple Line Icons -->
+    <link rel="stylesheet" href="../css/simple-line-icons.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<header role="banner" id="fh5co-header">
+    <div class="container">
+        <!-- <div class="row"> -->
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <!-- Mobile Toggle Menu Button -->
+                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                <a href="/" class="navbar-brand">Program Showcase</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="/"><span>Home</span></a></li>
+                    <li><a href="about" ><span>About Us</span></a></li>
+                    <li><a href="help"><span>Help</span></a></li>
+                    <%if(locals.session.userName){%>
+                    <li ><a  id="returnToAccountButton" style="color: #fff ; font-weight: bold; font-size: 18px" href="/account/<%= locals.session.userName%>">Return to account</a></li>
+                    <li><a href="/account/<%= locals.session.userName %>/logout"><button class="btn btn-primary2" type="button">LOGOUT</button></a></li>
+                    <%}%>
+
+                </ul>
+
+
+            </div>
+        </nav>
+        <!-- </div> -->
+    </div>
+</header>

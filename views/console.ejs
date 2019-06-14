@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!-- Emulator page with its own internal style sheet-->
+<meta charset="utf-8">
+<title>Program Showcase</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+    <link rel="stylesheet" href="../../../jqconsole/css/ansi.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css" media="screen"/>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen"/>
+
+    <style>
+        html, body {
+            color: white;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+
+        }
+        h2{
+            color: #52d3aa;
+            font-family: "Source Sans Pro", Arial, sans-serif;
+            font-weight: 400;
+            margin: 0 0 30px 0;
+        }
+        #fh5co-header {
+            position: absolute;
+            z-index: 99;
+            width: 100%;
+            opacity: 1;
+            top: 0;
+            margin-top: 40px;
+        }
+
+        @media screen and (max-width: 768px) {
+            #fh5co-header {
+                margin-top: 0;
+                background: #fff;
+                -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+                -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+            }
+            #fh5co-header .navbar-brand {
+                color: #52d3aa !important;
+            }
+            #fh5co-header #navbar li a {
+                color: rgba(0, 0, 0, 0.5) !important;
+                -webkit-transition: 0.3s;
+                -o-transition: 0.3s;
+                transition: 0.3s;
+            }
+            #fh5co-header #navbar li a:hover {
+                color: #52d3aa !important;
+            }
+            #fh5co-header #navbar li a span:before {
+                background: transparent !important;
+            }
+            #fh5co-header #navbar li.active a {
+                background: transparent;
+                background: none;
+                color: #52d3aa !important;
+            }
+            #fh5co-header #navbar li.active a span:before {
+                visibility: visible;
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+        }
+        #fh5co-header .navbar {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        #fh5co-header #navbar li a {
+            font-family: "Source Sans Pro", Arial, sans-serif;
+            color: rgba(255, 255, 255, 0.5);
+            position: relative;
+            font-size: 19px;
+            font-weight: 300;
+        }
+        #fh5co-header #navbar li a span {
+            position: relative;
+            display: block;
+            padding-bottom: 2px;
+        }
+        #fh5co-header #navbar li a span:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+            visibility: hidden;
+            -webkit-transform: scaleX(0);
+            -moz-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+            -o-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            -moz-transition: all 0.3s ease-in-out 0s;
+            -ms-transition: all 0.3s ease-in-out 0s;
+            -o-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+        }
+        #fh5co-header #navbar li a:hover {
+            color: #fff;
+        }
+        #fh5co-header #navbar li a:hover span:before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            -moz-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+            -o-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+        #fh5co-header #navbar li.active a {
+            background: transparent;
+            background: none;
+            color: #fff;
+        }
+        #fh5co-header #navbar li.active a span:before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+        #fh5co-header .navbar-brand {
+            float: left;
+            display: block;
+            font-size: 30px;
+            font-weight: 700;
+            padding-left: 0;
+            color: #fff;
+        }
+        #fh5co-header.navbar-fixed-top {
+            position: fixed !important;
+            background: #fff;
+            -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+            -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+            margin-top: 0px;
+            top: 0;
+        }
+        #fh5co-header.navbar-fixed-top .navbar-brand {
+            color: #52d3aa;
+        }
+        #fh5co-header.navbar-fixed-top #navbar li a {
+            color: rgba(0, 0, 0, 0.5);
+            -webkit-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s;
+        }
+        #fh5co-header.navbar-fixed-top #navbar li a:hover {
+            color: #52d3aa;
+        }
+        #fh5co-header.navbar-fixed-top #navbar li.active a {
+            background: transparent;
+            background: none;
+            color: #52d3aa;
+        }
+        #fh5co-header.navbar-fixed-top #navbar li.active a span:before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+            background-color: #52d3aa;
+        }
+        #fh5co-header .navbar-default {
+            border: transparent;
+            background: transparent;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            border-radius: 0px;
+        }
+        @media screen and (max-width: 768px) {
+            #fh5co-header .navbar-default {
+                margin-top: 0px;
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+        }
+        #fh5co-header .navbar-default .brand-slogan {
+            margin: 28px 0 0 15px;
+            float: left;
+            letter-spacing: 2px;
+            color: #adadad;
+        }
+        #fh5co-header .navbar-default .brand-slogan em {
+            color: #52d3aa;
+            font-style: normal;
+        }
+        #fh5co-header a {
+            -webkit-transition: 0s;
+            -o-transition: 0s;
+            transition: 0s;
+        }
+
+        #console {
+            height: 570px;
+            width: 850px;
+            position:relative;
+            background-color: black;
+            border: 2px solid #CCC;
+            margin-left: 530px;
+            padding-top: 0;
+        }
+
+        #btnText{
+            color: white;
+
+        }
+
+        /* Gradient for about section */
+        #fh5co-home .gradient {
+            position: absolute;
+            top: 0;
+            bottom: -100px;
+            left: 0;
+            right: 0;
+            z-index: -150;
+            opacity: .9;
+            -webkit-backface-visibility: hidden;
+            background-color: #52d3aa;
+            /* IE9, iOS 3.2+ */
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMzZjk1ZWEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUyZDNhYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+            background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #3f95ea), color-stop(1, #52d3aa));
+            /* Android 2.3 */
+            background-image: -webkit-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
+            /* IE10+ */
+            background-image: repeating-linear-gradient(to bottom right, #3f95ea 0%, #52d3aa 100%);
+            background-image: -ms-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
+        }
+
+        #returnAccountBtn{
+            margin-top: 20px;
+            margin-left: 500px;
+        }
+
+        .btn.btn-primary2 {
+            background: #393e46;
+            color: #fff;
+            font-weight: bold;
+            border: none !important;
+            border: 2px solid transparent !important;
+        }
+
+
+        .jqconsole {
+            padding: 10px;
+            padding-bottom: 10px;
+            font-size: 16px;
+        }
+        .jqconsole-cursor {
+            background-color: black;
+        }
+        .jqconsole-blurred .jqconsole-cursor {
+            background-color: black;
+        }
+        .jqconsole-prompt {
+            color: #52d3aa;
+        }
+        .jqconsole-old-prompt {
+            color: #52d3aa;
+            font-weight: normal;
+        }
+        .jqconsole-input {
+            color: #3f95ea;
+        }
+        .jqconsole-old-input {
+            color: #bb0;
+            font-weight: normal;
+        }
+        .brace {
+            color: #00FFFF;
+        }
+        .paran {
+            color: #FF00FF;
+        }
+        .bracket {
+            color: #FFFF00;
+        }
+        .jqconsole-composition {
+            background-color: red;
+        }
+
+        .inputMessage{
+            font-size: 20px;
+            margin-left: 560px;
+            padding-bottom: 0;
+        }
+
+        #inputBox{
+            color: #717171;
+            border-color: black;
+            border-width: thin;
+        }
+
+        #inputDiv{
+            margin-top: 150px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header role="banner" id="fh5co-header">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/"><span>Home</span></a></li>
+                <li><a href="about" ><span>About Us</span></a></li>
+                <li><a href="#"><span>Help</span></a></li>
+            </ul>
+            <a href="/account/<%= username %>/logout"><button class="btn btn-primary2" type="button">LOGOUT</button></a>
+        </div>
+    </nav>
+</header>
+
+<!-- Create input boxes if there are input function calls in the program they are running -->
+<div id="inputDiv">
+    <%if (program) {%>
+        <% for(var i=0;i<program.inputMessages.length;i++) {%>
+    <div>
+        <label class="inputMessage"> <%= program.inputMessages[i] %></label>
+        <input type="text" id="inputBox" placeholder="">
+    </div>
+        <% } %>
+    <% } %>
+</div>
+
+<section id="fh5co-home" data-section="home" data-stellar-background-ratio="0.5">
+    <div class="gradient"></div>
+    <div id="console" style="z-index: -3"></div>
+
+</section>
+
+    <% if (account === true) { %>
+        <a href="/account/<%= username%>" id="btnText"><button class="btn btn-primary" id="returnAccountBtn"><span> << Return to account</span></button></a>
+    <% } else { %>
+        <a href="/user/<%= username%>" id="btnText"><button class="btn btn-primary" id="returnAccountBtn"><span> << Return to account</span></button></a>
+    <% } %>
+
+
+
+
+<!-- These are scripts needed to run the emulator -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../jqconsole/lib/jqconsole.js" type="text/javascript"></script>
+<!-- shim for ES6 `Promise` builtin -->
+<script src="../../../pypyjs/lib/Promise.min.js" type="text/javascript"></script>
+<!-- shim for off-main-thread function compilation -->
+<script src="../../../pypyjs/lib/FunctionPromise.js" type="text/javascript"></script>
+<script src="../../../pypyjs/lib/pypyjs.js" type="text/javascript"></script>
+<script type="text/javascript">
+    pypyjs.ready().then(function() {
+        // this callback is fired when the interpreter is ready for use
+    })
+</script>
+<script>
+    // Initialize the widget.
+    var terminal = $('#console').jqconsole('', '>>> ');
+    pypyjs.execfile('../../../Users/<%= program.username %>/<%= program.programName %>/<%= program.mainProgram %>');
+    // Hook up output streams to write to the console.
+    pypyjs.stdout = pypyjs.stderr = function(data) {
+        terminal.Write(data, 'jqconsole-output');
+    }
+
+    // Interact by taking input from the console prompt.
+    pypyjs.repl(function(ps1) {
+
+        // The argument is ">>> " or "... " depending on REPL state.
+        terminal.SetPromptLabel(ps1);
+
+        // Return a promise if prompting for input asynchronously.
+        return new Promise(function(resolve, reject) {
+            terminal.Prompt(true, function (input) {
+                resolve(input);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

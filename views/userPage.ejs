@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- Public user account -->
+<head>
+
+    <meta charset="utf-8">
+    <title>Program Showcase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="/css/animate.css" media="screen">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" type="text/css" href="/css/icomoon.css" media="screen">
+    <!-- Simple Line Icons -->
+    <link rel="stylesheet" type="text/css" href="/css/simple-line-icons.css"media="screen" >
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css" media="screen"/>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/css/style2.css" media="screen"/>
+
+
+</head>
+<body>
+<header id="fh5co-header">
+    <!-- <div class="row"> -->
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <!-- Mobile Toggle Menu Button -->
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/"><span>Home</span></a></li>
+                <li><a href="/about" ><span>About Us</span></a></li>
+                <li><a href="/help"><span>Help</span></a></li>
+                <!-- Must be signed in for button to appear-->
+                <%if(locals.session.userName){%>
+                <li ><a  id="returnToAccountButton" style="color: #fff ; font-weight: bold; font-size: 18px" href="/account/<%= locals.session.userName%>">Return to account</a></li>
+                <li><a href="/account/<%= locals.session.userName %>/logout"><button class="btn btn-primary2" type="button">LOGOUT</button></a></li>
+                <%}%>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+<section id="fh5co-work" data-section="User's Projects">
+    <div class="gradient" style="z-index: -100"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 section-heading text-center">
+                <h2> <%= user.username %>'s Account</h2>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 subtext">
+                        <h3> Below are the user's shared uploaded</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-bottom-padded-sm">
+            <!-- Displays the programs a user has uploaded -->
+            <%if (programs) {%>
+                <% for(var i=0;i<programs.length;i++) {%>
+                    <div class="col-md-4 col-sm-6 col-xxs-12">
+                        <a href="/user/<%= user.username %>/run/<%= programs[i].programName %>" class="fh5co-project-item image-popup">
+                            <div class="fh5co-text">
+                                <h2 href="/user/<%= user.username %>/run/<%= programs[i].programName %>"><%= programs[i].programTitle %></h2>
+                                <span>Click to run this program!</span>
+                            </div>
+                        </a>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+
+</section>
+
+</body>

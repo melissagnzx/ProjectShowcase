@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Upload Page -->
+<head>
+    <meta charset="utf-8">
+    <title>Program Showcase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="/css/animate.css" media="screen">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" type="text/css" href="/css/icomoon.css" media="screen">
+    <!-- Simple Line Icons -->
+    <link rel="stylesheet" type="text/css" href="/css/simple-line-icons.css"media="screen" >
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css" media="screen"/>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/css/style2.css" media="screen"/>
+
+</head>
+<body>
+<header id="fh5co-header">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/"><span>Home</span></a></li>
+                <li><a href="about" ><span>About Us</span></a></li>
+                <li><a href="help"><span>Help</span></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<section id="fh5co-work">
+    <div class="gradient" style="z-index: -1"></div>
+        <div class="row">
+            <div class="col-md-12 section-heading text-center">
+                <h2>Upload Programs</h2>
+                <div class="col-lg-6 text-center" id="uploadError">
+                    <!-- Displays uploaded errors -->
+                    <% if (error) { %>
+                    <ul>
+                        <% error.forEach(function (error) { %>
+                        <div class="alert alert-danger">Error:  <%= error %></div>
+                        <% }) %>
+                    </ul>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+            <!-- Upload form -->
+            <div class="grid-container">
+                <div class="item1"></div>
+                <div class="item2" id="uploadBackground">
+                <h2 id="uploadText">Choose a Program File</h2>
+                <form id='uploadForm' method='post' encType="multipart/form-data">
+                    <input id="uploadBtn1" type='text1' name="progName" placeholder="Program Title">
+                    <input id="uploadBtn1" type="file" name="sampleFile" />
+                    <input class="btn btn-lg btn-primary" id="uploadBtn2" type='submit' value='Upload' />
+                </form>
+                </div>
+            </div>
+</section>
+

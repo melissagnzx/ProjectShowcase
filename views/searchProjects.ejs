@@ -1,0 +1,37 @@
+
+<%include partials/header.ejs%>
+<!-- Search Page -->
+<section id="fh5co-search" data-section="User's Projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 section-heading text-center">
+                <h2 id="searchHeading"> Search Programs</h2>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 subtext">
+                        <h3 id="searchHeading"> Enter a username to find their shared programs or explore programs by levels</h3>
+                    </div>
+                </div>
+                <!-- Displays errors if no user exists with that username -->
+                <% if (error) { %>
+                <div class="searchAlert"><%= error %></div>
+                <%}%>
+                <form method="POST" class="form-inline">
+                    <input class="form-control mr-sm-2" id="searchBar" type="search" name="username" placeholder="Search Username" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" type="submit">Search</button>
+                </form>
+
+                <div class="centered">
+                    <!--
+                    <a href="#" class="btn search" data-toggle="tooltip" title="Search beginner programs">Beginner</a>
+                    <a href="#" class="btn search">Intermediate</a>
+                    <a href="#" class="btn search">Advanced</a>
+                    -->
+                    <p></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<%include partials/footer.ejs%>

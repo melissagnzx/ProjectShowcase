@@ -1,0 +1,76 @@
+body{
+    background: #c5c6c7;
+}
+.btn{
+    margin-top: 15px;
+    margin-left: 160px;
+}
+#print_button {
+    margin-top: 50px;
+    margin-left: 100px;
+    color: #222629;
+    font-family: sans-serif;
+    background-color: #45a29e;
+    width: 80px;
+    padding: 3px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+}
+#create_account{
+    margin-top: 50px;
+    margin-left: 50px;
+    text-decoration: underline;
+}
+#account_details {
+    margin-top: 20px;
+    margin-left: 50px;
+    color: black;
+}
+#input{
+    margin-top: 50px;
+    margin-left:50px;
+    color:black;
+}
+/* change color of button when hover */
+#print_button:hover{
+    color: white;
+    background-color: #1f2833;
+}
+/* Add a background color to the top menu*/
+.menu {
+    background-color: #1f2833;
+    overflow: hidden;
+}
+/* Style the links inside the navigation bar */
+.menu a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+/* Change the color of links on hover */
+.menu a:hover {
+    background-color: #66fcf1;
+    color: black;
+}
+/* Add an active class to highlight the current page */
+.active {
+    background-color: #45a29e;
+    color: white;
+}
+/* Hide the link that should open and close the menu on small screens */
+.menu .icon {
+    display: none;
+}
+footer{
+    margin-top: 750px;
+    padding: 1px;
+    color: white;
+    background-color: #1f2833;
+    clear: left;
+    text-align: center;
+}
