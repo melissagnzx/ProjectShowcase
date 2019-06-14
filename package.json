@@ -1,0 +1,38 @@
+{
+  "name": "senior_project",
+  "version": "1.0.0",
+  "description": "Program showcase",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.cs.wwu.edu:cashz/senior_project.git"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "^1.18.3",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.3",
+    "del": "^3.0.0",
+    "ejs": "^2.6.1",
+    "express": "*",
+    "express-fileupload": "*",
+    "express-html": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "^5.2.0",
+    "file-system": "*",
+    "jquery": "^3.3.1",
+    "mongodb": "^3.0.8",
+    "mongoose": "^5.1.1",
+    "nodemon": "^1.17.4",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*"
+  },
+  "author": "Zachary Cash",
+  "license": "ISC"
+}
